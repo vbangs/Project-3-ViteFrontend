@@ -44,7 +44,13 @@ function Main(props) {
     const loaded = () => {
         return data.items.map((book) => (
             <div key={book.id} className="book">
-                <Link to={`/books/${book.id}`}>
+                {/* <Link to={`/books/${book.id}`}> */}
+                <Link to={{
+                    pathname: `books/${book.id}`,
+                    state: {
+                        book: book
+                    }
+                }}>
                     <h1>{book.volumeInfo.title}</h1>
                     <h3>{book.volumeInfo.authors[0]}</h3>
                     <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.imageLinks.thumbnail}/>
