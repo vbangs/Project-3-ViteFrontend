@@ -34,7 +34,7 @@ const Show = (props) => {
     return (
         <div className="book">
             <h1>{book.volumeInfo.title}</h1>
-            <h2>{book.volumeInfo.authors[0]}</h2>
+            <h2>{book.volumeInfo.authors}</h2>
             <img src={book.volumeInfo.imageLinks.thumbnail} alt='' />
             <a href="/Details"><button id="details"></button></a>
         
