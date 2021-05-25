@@ -3,12 +3,14 @@ import {useEffect, useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Index from '../pages/Index';
 import Show from '../pages/Show';
+import {Link} from 'react-router-dom';
 
 
 
 function Main(props) {
 
     const [form, setForm] = useState('');
+    const [data, setData] = useState(null);
 
     const URL=`https://www.googleapis.com/books/v1/volumes?q=${form.title}+intitle:${form.title}&key=AIzaSyC6j4bZ4ZvK4pkxk0lGiQw6Y16TLIsM6eY`
     
@@ -31,9 +33,34 @@ function Main(props) {
         const response = await fetch(URL)
         const bookData = await response.json()
 
+        setData(bookData)
         console.log(URL)
         console.log(bookData)
+
+        return bookData
         //conditional to see if we need to create book in MongoDB
+    }
+
+    const loaded = () => {
+        return data.items.map((book) => (
+            <div key={book.id} className="book">
+                {/* <Link to={`/books/${book.id}`}> */}
+                <Link to={{
+                    pathname: `books/${book.id}`,
+                    state: {
+                        book: book
+                    }
+                }}>
+                    <h1>{book.volumeInfo.title}</h1>
+                    <h3>{book.volumeInfo.authors[0]}</h3>
+                    <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.imageLinks.thumbnail}/>
+                </Link>
+            </div>
+        ))
+    }
+
+    const loading = () => {
+        return <h1>Search a Book Title</h1>
     }
     
     return(
@@ -46,6 +73,7 @@ function Main(props) {
                         <input type="text" value={form.name} name="title" placeholder="Search By Title" onChange={handleChange} />
                         <input type="submit" value="Find Book"/>
                     </form>
+                    {data ? loaded() : loading()}
                 </Route>
                 <Route path="/books/:id" render={() => <Show />}/>
             </Switch>
