@@ -75,7 +75,7 @@ function Main(props) {
                     </form>
                     {data ? loaded() : loading()}
                 </Route>
-                <Route path="/books/:id" render={() => <Show title={book.volumeInfo.title}/>}/>
+                <Route path="/books/:id" render={() => <Show />}/>
             </Switch>
         </main>
     ) 
