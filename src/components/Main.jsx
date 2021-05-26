@@ -1,7 +1,8 @@
 import React from 'react'
 import {useEffect, useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Index from '../pages/Index';
+import Add from '../pages/Add';
+import Edit from '../pages/Edit'
 import Show from '../pages/Show';
 import {Link} from 'react-router-dom';
 
@@ -34,19 +35,22 @@ function Main(props) {
         const bookData = await response.json()
 
         setData(bookData)
-        console.log(URL)
         console.log(bookData)
 
         return bookData
-        //conditional to see if we need to create book in MongoDB
     }
 
     const loaded = () => {
         return data.items.map((book) => (
             <div key={book.id} className="book">
-                <Link to={`/books/${book.id}`}>
+                <Link to={{
+                    pathname: `books/${book.id}`,
+                    state: {
+                        book: book
+                    }
+                }}>
                     <h1>{book.volumeInfo.title}</h1>
-                    <h3>{book.volumeInfo.authors[0]}</h3>
+                    <h3>{book.volumeInfo.authors}</h3>
                     <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.imageLinks.thumbnail}/>
                 </Link>
             </div>

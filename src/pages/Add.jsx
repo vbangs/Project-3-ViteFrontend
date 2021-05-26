@@ -1,7 +1,2 @@
-import React from "react"
-import Show from "./Show.jsx"
-
-
-
-
-export default Add
+import React from 'react'
+import {useState} from "react"

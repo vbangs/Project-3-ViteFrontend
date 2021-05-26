@@ -1,8 +1,11 @@
-import React from "react"
+import React from 'react'
 import {useState} from "react"
+import { useLocation } from 'react-router'
 
-function Show(props) {
-    const book = props.book
+
+const Show = (props) => {
+    const location = useLocation()
+    const {book} = location.state
     // const id = props.match.params.id
     // // copied from people app
     // const books = props.books
@@ -30,12 +33,10 @@ function Show(props) {
 
     return (
         <div className="book">
-            <h1>{book.title}</h1>
-            <h2>{book.authors}</h2>
-            <img src={book.image} alt={book.imageLinks.thumbnail} />
-            <a href="/Add"><button id="add">
-                add comment
-            </button></a>
+            <h1>{book.volumeInfo.title}</h1>
+            <h2>{book.volumeInfo.authors}</h2>
+            <img src={book.volumeInfo.imageLinks.thumbnail} alt='' />
+            <a href="/Details"><button id="details"></button></a>
         
         </div>
     )
