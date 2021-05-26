@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect, useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Add from '../pages/Add';
-import Edit from '../pages/Edit'
+import Edit from '../pages/Edit';
 import Show from '../pages/Show';
 import {Link} from 'react-router-dom';
 
