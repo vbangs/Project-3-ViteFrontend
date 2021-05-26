@@ -53,6 +53,8 @@ function Main(props) {
         ))
     }
 
+    const book = ""
+
     const loading = () => {
         return <h1>Search a Book Title</h1>
     }
@@ -69,7 +71,7 @@ function Main(props) {
                     </form>
                     {data ? loaded() : loading()}
                 </Route>
-                <Route path="/books/:id" render={() => <Show />}/>
+                <Route path="/books/:id" render={() => <Show title={book.volumeInfo.title}/>}/>
             </Switch>
         </main>
     ) 
