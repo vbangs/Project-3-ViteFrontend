@@ -3,8 +3,8 @@ import {useState} from "react"
 
 const Add = (props) => {
     //Use location to get book ID prop ??and createComment function??
-    const location = useLocation()
-    const {id} = location.state
+    // const location = useLocation()
+    // const {id} = location.state
 
     //state set up for form
     const [newForm, setNewForm] = useState({
@@ -33,6 +33,7 @@ const Add = (props) => {
                 name="comment"
                 placeholder="Add comment"
                 onChange={handleChange} />
+            <input type="submit" value="add comment" />
         </form>
     )
 }
