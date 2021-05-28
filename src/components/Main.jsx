@@ -35,7 +35,6 @@ function Main(props) {
         const bookData = await response.json()
 
         setData(bookData)
-        console.log(bookData)
 
         return bookData
     }
@@ -56,8 +55,6 @@ function Main(props) {
             </div>
         ))
     }
-
-    const book = ""
 
     const loading = () => {
         return <h1>Search a Book Title</h1>
