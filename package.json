@@ -10,14 +10,13 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.2.0",
-<<<<<<< HEAD
-=======
     "react-scripts": "^1.1.5",
->>>>>>> 0b8e472f5606cb4f32ce2effe6366322150f6db9
     "react-vitae": "^1.0.3"
   },
+  
   "devDependencies": {
     "@vitejs/plugin-react-refresh": "^1.3.1",
     "vite": "^2.3.3"
-  }
+  
+}
 }
