@@ -9,7 +9,6 @@ import {Link} from 'react-router-dom';
 const Show = (props) => {
     const location = useLocation()
     const {book} = location.state
-    const id = book.id
 
 
     const [comments, setComments] = useState(null)
@@ -21,26 +20,20 @@ const Show = (props) => {
         const data = await response.json()
 
         const bookDataById = (data) => {
-            return data.id === book.Id
+            return data.id === book.id
         }
 
         const bookData = data.find(bookDataById)
 
-        setComments(bookData)
+        
+        const useData= bookData.comment.join("\n")
+        setComments(useData)
         console.log(data)
         console.log(bookData)
+        console.log(useData)
     }
 
-    const addComment = async (comment) => {
-        await fetch(URL, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(comment)
-        })
-        getComments()
-    }
+
 
     useEffect(() => {
         getComments()
@@ -56,10 +49,13 @@ const Show = (props) => {
                 <h4>{book.volumeInfo.description}</h4>
                 <div className="comments">
                     <h3>Comments:</h3>
-                        <ul>
-                            <li>{comments.comment}</li>
-                        </ul>
-                    <Link to="books/add">
+                    <p>{comments}</p>
+                    <Link to={{
+                        pathname: `/add`,
+                        state: {
+                            book: book
+                        }
+                    }}>
                         <button>Add Comment</button>
                     </Link>
                 </div>
@@ -73,7 +69,7 @@ const Show = (props) => {
 
     return (
         <div>
-            {book ? loaded() : loading()}
+            {comments ? loaded() : loading()}
         </div>
     )
 }
