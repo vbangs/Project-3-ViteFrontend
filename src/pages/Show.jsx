@@ -23,10 +23,15 @@ const Show = (props) => {
             return data.id === book.id
         }
 
-        const bookData = data.find(bookDataById)
+        const bookData = data.filter(bookDataById)
 
         
-        const useData= bookData.comment.join("\n")
+        const useData= bookData.map( each => {
+          
+                return <li>{each.comment}</li>
+            
+        })
+
         setComments(useData)
         console.log(data)
         console.log(bookData)
@@ -49,7 +54,7 @@ const Show = (props) => {
                 <h4>{book.volumeInfo.description}</h4>
                 <div className="comments">
                     <h3>Comments:</h3>
-                    <p>{comments}</p>
+                    <ul>{comments}</ul>
                     <Link to={{
                         pathname: `/add`,
                         state: {

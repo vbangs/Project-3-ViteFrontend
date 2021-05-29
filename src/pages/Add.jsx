@@ -9,6 +9,7 @@ const Add = (props) => {
 
     //state set up for form
     const [newForm, setNewForm] = useState({
+        id: book.id,
         comment: ""
     })
 
@@ -22,6 +23,7 @@ const Add = (props) => {
         event.preventDefault()
         props.addComment(newForm, book.id)
         setNewForm({
+            id: "",
             comment: ""
         })
     }

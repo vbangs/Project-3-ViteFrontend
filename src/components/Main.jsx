@@ -42,7 +42,7 @@ function Main(props) {
         return bookData
     }
 
-    const addComment = async (comment, id) => {
+    const addComment = async (comment) => {
         await fetch(Heroku, {
             method: "post",
             headers: {
@@ -50,7 +50,7 @@ function Main(props) {
             },
             body: JSON.stringify(comment)
         })
-        history.push(`books/${id}`)
+        history.push(`/`)
     }
 
     const loaded = () => {
