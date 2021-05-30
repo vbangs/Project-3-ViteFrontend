@@ -17,7 +17,7 @@ function Main(props) {
 
     const URL=`https://www.googleapis.com/books/v1/volumes?q=${form.title}+intitle:${form.title}&key=AIzaSyC6j4bZ4ZvK4pkxk0lGiQw6Y16TLIsM6eY`
     
-    const Heroku="https://notebooks3.herokuapp.com/books"
+    const Heroku="https://notebooks3.herokuapp.com/books/"
 
     const handleChange = (event) => {
         setForm({
@@ -51,6 +51,25 @@ function Main(props) {
             body: JSON.stringify(comment)
         })
         history.push(`/`)
+    }
+
+    const editComment = async (comment, id) => {
+        await fetch(Heroku + id, {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(comment)
+        })
+        history.push(`/`)
+    }
+
+    const deleteComment = async (id) => {
+        //make delete request to delete comment
+        await fetch(Heroku + id, {
+            method: "delete",
+        })
+        history.push('/')
     }
 
     const loaded = () => {
@@ -88,6 +107,7 @@ function Main(props) {
                 </Route>
                 <Route path="/add" render={(rp) => <Add addComment={addComment} {...rp}/>}/>
                 <Route path="/books/:id" render={(rp) => <Show {...rp}/>}/>
+                <Route path="/edit" render={(rp) => <Edit editComment={editComment} deleteComment={deleteComment} {...rp}/>}/>
             </Switch>
         </main>
     ) 

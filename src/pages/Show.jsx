@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import {useState} from "react"
 import { useLocation } from 'react-router'
-import Add from "./Add"
-import {Route, Switch} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 
@@ -25,20 +23,29 @@ const Show = (props) => {
 
         const bookData = data.filter(bookDataById)
 
-        
-        const useData= bookData.map( each => {
-          
-                return <li>{each.comment}</li>
-            
-        })
-
-        setComments(useData)
-        console.log(data)
         console.log(bookData)
-        console.log(useData)
+
+        //Map over the the array of objects and display the comment value for each object
+        const useData= bookData.map( each => {
+                return (
+                    <li>
+                        {each.comment}
+                            <Link to={{
+                            pathname: `/edit`,
+                            state: {
+                                book: book,
+                                comment: each.comment,
+                                mongoId: each._id
+                            }
+                        }}>
+                            <button>Edit Comment</button>
+                        </Link>
+                        
+                    </li>
+                )
+        })
+        setComments(useData)
     }
-
-
 
     useEffect(() => {
         getComments()
