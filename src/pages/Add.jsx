@@ -1,13 +1,15 @@
 import React from 'react'
 import {useState} from "react"
+import { useLocation } from 'react-router'
 
 const Add = (props) => {
     //Use location to get book ID prop ??and createComment function??
-    // const location = useLocation()
-    // const {id} = location.state
+    const location = useLocation()
+    const {book} = location.state
 
     //state set up for form
     const [newForm, setNewForm] = useState({
+        id: book.id,
         comment: ""
     })
 
@@ -19,14 +21,20 @@ const Add = (props) => {
     //handle submit to create new comment
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.createComment(newForm)
+        props.addComment(newForm, book.id)
         setNewForm({
+            id: "",
             comment: ""
         })
     }
 
     return(
         <form onSubmit={handleSubmit}>
+            <input
+                type="text"
+                readOnly value={book.id}
+                name="id"
+                placeholder="id"/>
             <input
                 type="text"
                 value={newForm.comment}

@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import {useState} from "react"
 import { useLocation } from 'react-router'
-import Add from "./Add"
-import {Route, Switch} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 
 const Show = (props) => {
     const location = useLocation()
     const {book} = location.state
-    const id = book.id
 
 
     const [comments, setComments] = useState(null)
@@ -21,25 +18,33 @@ const Show = (props) => {
         const data = await response.json()
 
         const bookDataById = (data) => {
-            return data.id === book.Id
+            return data.id === book.id
         }
 
-        const bookData = data.find(bookDataById)
+        const bookData = data.filter(bookDataById)
 
-        setComments(bookData)
-        console.log(data)
         console.log(bookData)
-    }
 
-    const addComment = async (comment) => {
-        await fetch(URL, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(comment)
+        //Map over the the array of objects and display the comment value for each object
+        const useData= bookData.map( each => {
+                return (
+                    <li>
+                        {each.comment}
+                            <Link to={{
+                            pathname: `/edit`,
+                            state: {
+                                book: book,
+                                comment: each.comment,
+                                mongoId: each._id
+                            }
+                        }}>
+                            <button>Edit Comment</button>
+                        </Link>
+                        
+                    </li>
+                )
         })
-        getComments()
+        setComments(useData)
     }
 
     useEffect(() => {
@@ -56,10 +61,13 @@ const Show = (props) => {
                 <h4>{book.volumeInfo.description}</h4>
                 <div className="comments">
                     <h3>Comments:</h3>
-                        <ul>
-                            <li>{comments.comment}</li>
-                        </ul>
-                    <Link to="books/add">
+                    <ul>{comments}</ul>
+                    <Link to={{
+                        pathname: `/add`,
+                        state: {
+                            book: book
+                        }
+                    }}>
                         <button>Add Comment</button>
                     </Link>
                 </div>
@@ -73,7 +81,7 @@ const Show = (props) => {
 
     return (
         <div>
-            {book ? loaded() : loading()}
+            {comments ? loaded() : loading()}
         </div>
     )
 }
