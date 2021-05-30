@@ -35,7 +35,6 @@ function Main(props) {
         const bookData = await response.json()
 
         setData(bookData)
-        console.log(bookData)
 
         return bookData
     }
@@ -57,8 +56,6 @@ function Main(props) {
         ))
     }
 
-    const book = ""
-
     const loading = () => {
         return <h1>Search a Book Title</h1>
     }
@@ -75,7 +72,8 @@ function Main(props) {
                     </form>
                     {data ? loaded() : loading()}
                 </Route>
-                <Route path="/books/:id" render={() => <Show title={book.volumeInfo.title}/>}/>
+                <Route path="/books/add" render={() => <Add />}/>
+                <Route path="/books/:id" render={() => <Show />}/>
             </Switch>
         </main>
     ) 
