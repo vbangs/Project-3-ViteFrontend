@@ -5,6 +5,8 @@ import Add from '../pages/Add';
 import Edit from '../pages/Edit';
 import Show from '../pages/Show';
 import {Link} from 'react-router-dom';
+import '../style.css'
+
 
 
 
@@ -41,36 +43,46 @@ function Main(props) {
 
     const loaded = () => {
         return data.items.map((book) => (
-            <div key={book.id} className="book">
+            
+            <div key={book.id} className="book card">
                 <Link to={{
                     pathname: `books/${book.id}`,
                     state: {
                         book: book
                     }
                 }}>
-                    <h1>{book.volumeInfo.title}</h1>
-                    <h3>{book.volumeInfo.authors}</h3>
                     <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.imageLinks.thumbnail}/>
+                    <div className="card-body">
+                    <h1 className="card-title">{book.volumeInfo.title}</h1>
+                    <h3 className="card-text">{book.volumeInfo.authors}</h3>
+                    <a href="#!" type="button" class="btn btn-danger">Button</a>
+                    </div>
+                    
                 </Link>
             </div>
         ))
+        
     }
 
     const loading = () => {
-        return <h1>Search a Book Title</h1>
+        return <h2 className="loading">Search a Book Title</h2>
     }
     
     return(
-        <main>
+        <main className="main">
 
 
             <Switch>
                 <Route exact path="/">
+
                     <form onSubmit={handleSubmit}>
                         <input type="text" value={form.name} name="title" placeholder="Search By Title" onChange={handleChange} />
-                        <input type="submit" value="Find Book"/>
+                        <input type="submit" value="Find Book" class="btn btn-danger"/>
                     </form>
+                    <div className="cards">
                     {data ? loaded() : loading()}
+                    </div>
+                    
                 </Route>
                 <Route path="/books/add" render={() => <Add />}/>
                 <Route path="/books/:id" render={() => <Show />}/>
@@ -81,3 +93,4 @@ function Main(props) {
 
 
 export default Main;
+
