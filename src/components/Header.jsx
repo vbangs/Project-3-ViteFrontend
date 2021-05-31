@@ -6,7 +6,7 @@ function Header(props) {
 
     return(
         <header className="header">
-        <h1>Note-Books</h1>
+        <a href="/"><h1>Note-Books</h1></a>
         <h2>An app that helps you learn better!</h2>
         </header>
     )

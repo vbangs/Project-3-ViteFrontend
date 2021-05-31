@@ -84,9 +84,8 @@ function Main(props) {
                 }}>
                     <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.imageLinks.thumbnail}/>
                     <div className="card-body">
-                    <h1 className="card-title">{book.volumeInfo.title}</h1>
-                    <h3 className="card-text">{book.volumeInfo.authors}</h3>
-                    <a href="#!" type="button" class="btn btn-danger">Button</a>
+                    <h2 className="card-title">{book.volumeInfo.title}</h2>
+                    <h4 className="card-text">{book.volumeInfo.authors}</h4>
                     </div>
                     
                 </Link>
@@ -107,8 +106,8 @@ function Main(props) {
                 <Route exact path="/">
 
                     <form onSubmit={handleSubmit}>
-                        <input type="text" value={form.name} name="title" placeholder="Search By Title" onChange={handleChange} />
-                        <input type="submit" value="Find Book" class="btn btn-danger"/>
+                        <input type="text" value={form.name} name="title" placeholder="Search By Title" onChange={handleChange} className="input" />
+                        <input type="submit" value="Find Book" class="btn btn-sm"/>
                     </form>
                     <div className="cards">
                     {data ? loaded() : loading()}

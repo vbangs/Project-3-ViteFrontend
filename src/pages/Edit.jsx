@@ -44,15 +44,18 @@ return (
                 type="text"
                 readOnly value={book.id}
                 name="id"
-                placeholder="id"/>
+                placeholder="id"
+                className="input"/> <br />
             <textarea name="comment" id="" cols="30" rows="10" 
                 value={Edit.comment} 
                 placeholder="comment" 
-                onChange={handleChange}>
+                onChange={handleChange}
+                className="input">
             </textarea>
-            <input type="submit" value="Edit Comment" />
+            <br />
+            <input type="submit" value="Edit Comment" class="btn btn-sm"/>
         </form>
-        <button onClick={removeComment} id="delete">Delete Comment</button>
+        <button onClick={removeComment} id="delete" class="btn btn-sm">Delete Comment</button>
     </div>
 )}
 
