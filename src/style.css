@@ -89,3 +89,7 @@ grid-gap: 1rem;
     background: #f2f2f0;
     margin: 15px;
   }
+
+  .input-hidden{
+    display: none;
+  }

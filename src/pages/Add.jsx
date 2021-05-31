@@ -35,7 +35,7 @@ const Add = (props) => {
                 readOnly value={book.id}
                 name="id"
                 placeholder="id"
-                className="input"/>
+                className="input-hidden"/>
             <input
                 type="text"
                 value={newForm.comment}
