@@ -7,7 +7,7 @@
 Note-Books is an app that allows users to track tech and computer science books that they have read.  Users can search for any book available through Google Books and contribute notes or personal insights by adding comments on the book page.  Users are also able to edit and delete any comments that they add to the page of a given book.
 
 </br>
-<img width="1027" alt="Screen Shot 2021-06-01 at 10 26 27 AM" src="https://user-images.githubusercontent.com/77699407/120352345-af000e00-c2ce-11eb-9982-869292fb15fc.png"><br></br>
+<img width="925" alt="Screen Shot 2021-06-01 at 10 24 06 AM" src="https://user-images.githubusercontent.com/77699407/120353083-6563f300-c2cf-11eb-956d-cbdc5c3f5832.png">><br></br>
 
 <img width="1027" alt="Screen Shot 2021-06-01 at 10 24 46 AM" src="https://user-images.githubusercontent.com/77699407/120352560-dfe04300-c2ce-11eb-9cbb-6ae1c0200967.png"><br></br>
 
@@ -16,10 +16,6 @@ Note-Books is an app that allows users to track tech and computer science books 
 <img width="1027" alt="Screen Shot 2021-06-01 at 10 26 27 AM" src="https://user-images.githubusercontent.com/77699407/120352743-1918b300-c2cf-11eb-90e0-c223b9a7fd97.png">><br></br>
 
 <img width="1027" alt="Screen Shot 2021-06-01 at 10 25 57 AM" src="https://user-images.githubusercontent.com/77699407/120352786-233ab180-c2cf-11eb-8141-c8f8ce219c0c.png"><br></br>
-
-![Screen Shot 2021-04-20 at 6 23 48 PM](https://user-images.githubusercontent.com/77699407/115471581-348b9b00-a206-11eb-9c50-08ee4433e131.png)<br></br>
-
-![Screen Shot 2021-04-20 at 6 24 06 PM](https://user-images.githubusercontent.com/77699407/115471611-3f463000-a206-11eb-9cf9-3ba9070bb2d2.png)<br></br>
 
 
 
