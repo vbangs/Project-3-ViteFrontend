@@ -45,7 +45,7 @@ return (
                 readOnly value={book.id}
                 name="id"
                 placeholder="id"
-                className="input"/> <br />
+                className="input-hidden"/> <br />
             <textarea name="comment" id="" cols="30" rows="10" 
                 value={Edit.comment} 
                 placeholder="comment" 
