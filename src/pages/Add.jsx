@@ -34,14 +34,16 @@ const Add = (props) => {
                 type="text"
                 readOnly value={book.id}
                 name="id"
-                placeholder="id"/>
+                placeholder="id"
+                className="input-hidden"/>
             <input
                 type="text"
                 value={newForm.comment}
                 name="comment"
                 placeholder="Add comment"
-                onChange={handleChange} />
-            <input type="submit" value="add comment" />
+                onChange={handleChange} 
+                className="input"/>
+            <input type="submit" value="add comment" class="btn btn-sm"/>
         </form>
     )
 }
