@@ -1,9 +1,12 @@
 import React from 'react'
+import '../style.css'
 
 function Footer(props) {
 
     return(
-        <h1>Footer</h1>
+        <footer className="fixed-footer footer">
+        <p className="container-footer">Copyright &copy; Note-books 2021</p>
+        </footer>
     )
 }
 
