@@ -12,8 +12,6 @@ const commentId = location.state.mongoId
 console.log(book)
 console.log(comment)
 console.log(commentId)
-    
-// this.setState({commentText: comment.text.target.value})
 
 //state for our updateComment form
 const [Edit, setEdit] = useState({id: book.id, comment: comment})
