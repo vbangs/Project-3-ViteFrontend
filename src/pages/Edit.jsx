@@ -45,12 +45,12 @@ return (
                 readOnly value={book.id}
                 name="id"
                 placeholder="id"
-                className="input-hidden"/> <br />
+                className="input"/> <br />
             <textarea name="comment" id="" cols="30" rows="10" 
                 value={Edit.comment} 
                 placeholder="comment" 
                 onChange={handleChange}
-                className="input">
+                className="input-hidden">
             </textarea>
             <br />
             <input type="submit" value="Edit Comment" class="btn btn-sm"/>
