@@ -37,8 +37,8 @@ const Show = (props) => {
                                 comment: each.comment,
                                 mongoId: each._id
                             }
-                        }}>
-                            <button>Edit Comment</button>
+                        }}> <br />
+                            <button class="btn btn-sm">Edit Comment</button>
                         </Link>
                         
                     </li>
@@ -68,7 +68,7 @@ const Show = (props) => {
                             book: book
                         }
                     }}>
-                        <button>Add Comment</button>
+                        <button class="btn btn-sm">Add Comment</button>
                     </Link>
                 </div>
             </div>  
