@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo from '../logo.svg'
 import './App.css'
 
+
 //import components
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -9,7 +10,7 @@ import Main from './components/Main'
 //import pages
 
 function App() {
-
+  
 
   return (
     <div className="App">
