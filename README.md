@@ -1,21 +1,21 @@
 # Note-Books
 
-**Author:** Fawzia Nur, Humaira Zafar, Tim Hatch & Veronica Bangs
+**Authors:** Fawzia Nur, Humaira Zafar, Tim Hatch & Veronica Bangs
 
 
 ## Project Summary
 Note-Books is an app that allows users to track tech and computer science books that they have read.  Users can search for any book available through Google Books and contribute notes or personal insights by adding comments on the book page.  Users are also able to edit and delete any comments that they add to the page of a given book.
 
 </br>
-![Screen Shot 2021-04-20 at 6 22 03 PM](https://user-images.githubusercontent.com/77699407/115471411-f0989600-a205-11eb-9d18-056d382a83d6.png)<br></br>
+<img width="1027" alt="Screen Shot 2021-06-01 at 10 26 27 AM" src="https://user-images.githubusercontent.com/77699407/120352345-af000e00-c2ce-11eb-9982-869292fb15fc.png"><br></br>
 
-![Screen Shot 2021-04-20 at 6 22 11 PM](https://user-images.githubusercontent.com/77699407/115471490-132aaf00-a206-11eb-90db-042294231630.png)<br></br>
+<img width="1027" alt="Screen Shot 2021-06-01 at 10 24 46 AM" src="https://user-images.githubusercontent.com/77699407/120352560-dfe04300-c2ce-11eb-9cbb-6ae1c0200967.png"><br></br>
 
-![Screen Shot 2021-04-20 at 6 29 44 PM](https://user-images.githubusercontent.com/77699407/115471710-6997ed80-a206-11eb-95a1-2feaf4acfd2c.png)<br></br>
+<img width="1027" alt="Screen Shot 2021-06-01 at 10 25 08 AM" src="https://user-images.githubusercontent.com/77699407/120352623-f25a7c80-c2ce-11eb-964b-89ff49097311.png"><br></br>
 
-![Screen Shot 2021-04-20 at 6 22 40 PM](https://user-images.githubusercontent.com/77699407/115471531-20479e00-a206-11eb-9c10-f20763f27371.png)<br></br>
+<img width="1027" alt="Screen Shot 2021-06-01 at 10 26 27 AM" src="https://user-images.githubusercontent.com/77699407/120352743-1918b300-c2cf-11eb-90e0-c223b9a7fd97.png">><br></br>
 
-![Screen Shot 2021-04-20 at 6 23 22 PM](https://user-images.githubusercontent.com/77699407/115471557-2b023300-a206-11eb-83f6-d5ee9d3a5c65.png)<br></br>
+<img width="1027" alt="Screen Shot 2021-06-01 at 10 25 57 AM" src="https://user-images.githubusercontent.com/77699407/120352786-233ab180-c2cf-11eb-8141-c8f8ce219c0c.png"><br></br>
 
 ![Screen Shot 2021-04-20 at 6 23 48 PM](https://user-images.githubusercontent.com/77699407/115471581-348b9b00-a206-11eb-9c50-08ee4433e131.png)<br></br>
 
